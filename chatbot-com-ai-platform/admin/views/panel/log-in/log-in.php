@@ -1,5 +1,4 @@
 <?php
-
 if (!defined('ABSPATH')) { exit; }
 wp_enqueue_style(CHATBOTCOM_ASSETS_PREFIX.'style-panel-log-in', plugin_dir_url(__FILE__) . 'log-in.css');
 
@@ -29,12 +28,12 @@ wp_enqueue_style(CHATBOTCOM_ASSETS_PREFIX.'style-panel-log-in', plugin_dir_url(_
     </div>
 
     <div class="panel-log-in-button">
-        <?php CHATBOTCOM_Components::tpl_button_button(
+        <?php CHATBOTCOM_Components::tplButtonButton(
             '<img src="'.CHATBOTCOM_ADMIN_URL.'assets/images/chatbot-logo-small-white.svg'.'" alt="dashboard"/> Connect account',
             'big',
             'connect_account_button'
         ); ?>
     </div>
 
-    <?php CHATBOTCOM_Components::tpl_create_link(); ?>
+    <?php CHATBOTCOM_Components::tplCreateLink(); ?>
 </div>

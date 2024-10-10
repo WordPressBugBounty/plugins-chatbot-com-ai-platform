@@ -1,9 +1,9 @@
 === ChatBot – WP AI Chat Bot Plugin, Best AI Bot For WordPress ===
 Contributors: LiveChat
 Tags: chat bot, chatbot, bot, live chat, chatbot plugin
-Stable tag: 1.0.9
+Stable tag: 1.1.0
 Requires PHP: 5.6
-Tested up to: 6.5.5
+Tested up to: 6.6.2
 Requires at least: 3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html

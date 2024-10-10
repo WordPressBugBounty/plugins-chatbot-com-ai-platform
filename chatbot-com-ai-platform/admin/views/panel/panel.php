@@ -1,5 +1,4 @@
 <?php
-
 if (!defined('ABSPATH')) { exit; }
 wp_enqueue_style(CHATBOTCOM_ASSETS_PREFIX.'style-panel', plugin_dir_url( __FILE__ ).'panel.css');
 
@@ -13,12 +12,12 @@ wp_enqueue_style(CHATBOTCOM_ASSETS_PREFIX.'style-panel', plugin_dir_url( __FILE_
                 class="logo"
                 src="<?= CHATBOTCOM_ADMIN_URL.'assets/images/chatbot-logo.svg'; ?>"/>
 
-            <?php if (CHATBOTCOM_Admin::get_instance()->data->is_connected()) { ?>
+            <?php if (CHATBOTCOM_Admin::getInstance()->store->isConnected()) { ?>
             <div class="account">
                 <span class="account-logged">Connected with</span>
-                <span class="account-email" text-weight="bold"><?= CHATBOTCOM_Admin::get_instance()->data->data_email ?></span>
+                <span class="account-email" text-weight="bold"><?= CHATBOTCOM_Admin::getInstance()->store->connection['email'] ?></span>
                 <a
-                    href="<?= CHATBOTCOM_Admin::get_instance()->data->get_action_url('disconnect') ?>"
+                    href="<?= CHATBOTCOM_Utils::getDisconnectActionUrl() ?>"
                     text-color="black"
                     class="account-logout"
                     text-underline
@@ -35,7 +34,7 @@ wp_enqueue_style(CHATBOTCOM_ASSETS_PREFIX.'style-panel', plugin_dir_url( __FILE_
         <div class="panel-content-wrapper">
             <div class="panel-content">
                 <?php
-                    switch (CHATBOTCOM_Admin::get_instance()->data->current_view) {
+                    switch (CHATBOTCOM_Admin::getInstance()->store->view) {
                         case 'log-in':
                             require_once 'log-in/log-in.php'; break;
                         case 'error':

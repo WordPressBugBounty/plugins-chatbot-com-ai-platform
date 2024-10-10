@@ -43,6 +43,9 @@
     height: calc(100vh - 32px);
     border: 0;
     font-family: 'Colfax', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #chatbot-admin-panel-wrapper * {
