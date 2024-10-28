@@ -11,9 +11,6 @@ class CHATBOTCOM_Utils {
     public static function sanitizeString ($input) {
         return esc_html($input);
     }
-    public static function sanitizeBoolean ($input) {
-        return boolval($input);
-    }
     public static function getDisconnectActionUrl () {
         return CHATBOTCOM_ADMIN_PAGE_URL.'&nonce='.wp_create_nonce(CHATBOTCOM_NONCE).'&action=disconnect';
     }

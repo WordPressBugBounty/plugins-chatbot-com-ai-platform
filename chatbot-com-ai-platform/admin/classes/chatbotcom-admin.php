@@ -15,17 +15,13 @@ class CHATBOTCOM_Admin{
     public function initialize() {
         $this->store = new CHATBOTCOM_Store();
 
-        $formActionValid = (
+        if (
             current_user_can('manage_options') &&
             array_key_exists('nonce', $_GET) &&
             array_key_exists('action', $_GET) &&
             wp_verify_nonce($_GET['nonce'], CHATBOTCOM_NONCE)
-        );
-
-        $action = CHATBOTCOM_Utils::sanitizeString($_GET['action']);
-
-        if ($formActionValid) {
-            switch ($action) {
+        ) {
+            switch (CHATBOTCOM_Utils::sanitizeString($_GET['action'])) {
                 case 'log-in':
                     if (!array_key_exists('access_token', $_POST)) {
                         break;
@@ -62,8 +58,8 @@ class CHATBOTCOM_Admin{
                     $connectionId = CHATBOTCOM_Utils::sanitizeString($widget_data[0]);
                     $storyName = CHATBOTCOM_Utils::sanitizeString($widget_data[1]);
                     $email = CHATBOTCOM_Utils::sanitizeEmail($_POST['email']);
-                    $disableMobile = CHATBOTCOM_Utils::sanitizeBoolean($_POST['disable-mobile']);
-                    $disableGuests = CHATBOTCOM_Utils::sanitizeBoolean($_POST['disable-guests']);
+                    $disableMobile = isset($_POST['disable-mobile']);
+                    $disableGuests = isset($_POST['disable-guests']);
 
                     if (
                         !CHATBOTCOM_Utils::validateId($connectionId) ||
@@ -95,8 +91,8 @@ class CHATBOTCOM_Admin{
 
                     return $this->store->setViewConnected();
                 case 'update':
-                    $disableMobile = CHATBOTCOM_Utils::sanitizeBoolean($_POST['disable-mobile']);
-                    $disableGuests = CHATBOTCOM_Utils::sanitizeBoolean($_POST['disable-guests']);
+                    $disableMobile = isset($_POST['disable-mobile']);
+                    $disableGuests = isset($_POST['disable-guests']);
 
                     $this->store->updateOptions(
                         $disableMobile,
