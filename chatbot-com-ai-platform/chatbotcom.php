@@ -6,7 +6,7 @@ Description: Easy to use chatbot platform for business. This plugin allows to qu
 Author: ChatBot
 Author URI: https://www.chatbot.com
 Text Domain: chatbot-com-ai-platform
-Version: 1.1.2
+Version: 1.1.3
 */
 
 if (!defined('ABSPATH')) { exit; }
