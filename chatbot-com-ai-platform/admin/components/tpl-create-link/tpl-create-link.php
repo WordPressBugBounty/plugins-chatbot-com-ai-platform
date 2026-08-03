@@ -2,7 +2,7 @@
 
 <div
     text-type="h7">
-    Need an ChatBot account?
+    Need a ChatBot.com account?
     <a
         href="<?= CHATBOTCOM_AUTH_URL ?>"
         target="_blank"

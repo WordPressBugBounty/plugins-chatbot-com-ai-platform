@@ -22,7 +22,7 @@
 
         popup = window.open(
             url.toString(),
-            'ChatBot',
+            'ChatBot.com',
             ['resizable=no', 'width='+width, 'height='+height, 'top='+y, 'left='+x].join(','));
 
         window.addEventListener('message', onMessage);

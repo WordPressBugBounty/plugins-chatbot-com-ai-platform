@@ -159,7 +159,12 @@ class CHATBOTCOM_Store {
     }
     public function fetchConnections () {
         $url = CHATBOTCOM_API_URL . "/v2/integrations/wordpress/openwidget";
-        $args = array('headers' => array('Authorization' => "Bearer " . $this->accessToken));
+        $args = array(
+            'headers' => array(
+                'authorization' => "Bearer " . $this->accessToken,
+                'x-application' => "ChatBot.com"
+            ),
+        );
         $response = wp_remote_get($url, $args);
         $code = wp_remote_retrieve_response_code($response);
         $body = wp_remote_retrieve_body($response);
@@ -176,7 +181,8 @@ class CHATBOTCOM_Store {
         $args = array(
             'headers' => array(
                 'Authorization' => "Bearer " . $this->accessToken,
-                'Content-Type'  => 'application/json;charset=UTF-8'
+                'Content-Type'  => 'application/json;charset=UTF-8',
+                'x-application' => "ChatBot.com"
             ),
             'body' => json_encode(array('id' => $id))
         );

@@ -12,7 +12,7 @@ define('CHATBOTCOM_CB_CDN_URL', 'cdn.chatbot.com');
 define('CHATBOTCOM_OW_CDN_URL', 'cdn.openwidget.com');
 
 // MENU
-define('CHATBOTCOM_MENU_TITLE', 'ChatBot');
+define('CHATBOTCOM_MENU_TITLE', 'ChatBot.com');
 define('CHATBOTCOM_MENU_SLUG', 'chatbotcom-configuration');
 
 // INTERNALS
@@ -23,7 +23,7 @@ define('CHATBOTCOM_ADMIN_DIR', dirname(__FILE__).'/../admin/');
 define('CHATBOTCOM_PUBLIC_DIR', dirname(__FILE__).'/../public/');
 
 // PAGE
-define('CHATBOTCOM_PAGE_TITLE', 'ChatBot Configuration');
+define('CHATBOTCOM_PAGE_TITLE', 'ChatBot.com Configuration');
 define('CHATBOTCOM_PAGE_HOOK', 'toplevel_page_chatbotcom-configuration');
 define('CHATBOTCOM_ASSETS_PREFIX', 'chatbotcom-configuration-');
 
